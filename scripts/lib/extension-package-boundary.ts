@@ -9,12 +9,16 @@ export const EXTENSION_PACKAGE_BOUNDARY_EXCLUDE = [
   "./**/*.test.ts",
   "./dist/**",
   "./node_modules/**",
+  "./src/test-support/**",
+  "./src/**/*test-helpers.ts",
+  "./src/**/*test-harness.ts",
+  "./src/**/*test-support.ts",
 ] as const;
 export const EXTENSION_PACKAGE_BOUNDARY_BASE_PATHS = {
   "openclaw/extension-api": ["../src/extensionAPI.ts"],
   "openclaw/plugin-sdk": ["../dist/plugin-sdk/index.d.ts"],
   "openclaw/plugin-sdk/*": ["../dist/plugin-sdk/*.d.ts"],
-  "openclaw/plugin-sdk/account-id": ["../src/plugin-sdk/account-id.ts"],
+  "@openclaw/*.js": ["../packages/plugin-sdk/dist/extensions/*.d.ts", "../extensions/*"],
   "@openclaw/*": ["../packages/plugin-sdk/dist/extensions/*", "../extensions/*"],
   "@openclaw/plugin-sdk/*": ["../dist/plugin-sdk/*.d.ts"],
 } as const;
